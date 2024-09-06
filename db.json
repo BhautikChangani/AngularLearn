@@ -1,66 +1,52 @@
 {
-    "posts": [
-      {
-        "id": "1",
-        "title": "a title",
-        "views": 100
-      },
-      {
-        "id": "2",
-        "title": "another title",
-        "views": 200
-      }
-    ],
-    "comments": [
-      {
-        "id": "1",
-        "text": "a comment about post 1",
-        "postId": "1"
-      },
-      {
-        "id": "2",
-        "text": "another comment about post 1",
-        "postId": "1"
-      }
-    ],
-    "Users": [
-      {
-        "id": "149a",
-        "Name": "hagdjhgajh",
-        "Email": "bhautik123@gmail.com",
-        "Mobile": 6546546545,
-        "Age": 21
-      },
-      {
-        "id": "664c",
-        "Name": "Bhautik",
-        "Email": "bhautik123@gmail.com",
-        "Mobile": 7284090630,
-        "Age": 21
-      },
-      {
-        "id": "8152",
-        "Name": "hagdjhgajh",
-        "Email": "bhautik123@gmail.com",
-        "Mobile": 6546546545,
-        "Age": 23
-      },
-      {
-        "id": "ec2f",
-        "Name": "Hey",
-        "Email": "hey@gmail.com",
-        "Mobile": 6546546542,
-        "Age": 24
-      },
-      {
-        "id": "1c8675ad-5b6d-4d38-9afe-b297342f6507",
-        "Name": "Harshsadfasdf",
-        "Email": "harsh@gmail.com",
-        "Mobile": 9876543211,
-        "Age": 22
-      }
-    ],
-    "profile": {
-      "name": "typicode"
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "Users": [
+    {
+      "id": "d7238d23-1589-4bab-b4bd-0c9702bbf29c",
+      "Name": "Hello",
+      "Email": "bhdbj@gmail.com",
+      "Mobile": 4564564565,
+      "Age": 19
+    },
+    {
+      "id": "32b5bfd1-1519-435c-a1cd-4015f3100f43",
+      "Name": "Harsh",
+      "Email": "harsh@gmail.com",
+      "Mobile": 6546546545,
+      "Age": 18
+    },
+    {
+      "id": "205bdf21-d00f-48e5-af7b-ddf4821131cd",
+      "Name": "Bhautik",
+      "Email": "bhautik@gmail.com",
+      "Mobile": 7284090630,
+      "Age": 21
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}

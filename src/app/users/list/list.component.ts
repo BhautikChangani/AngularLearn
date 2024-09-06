@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataServiceService } from '../../data-service.service';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +8,7 @@ import { DataServiceService } from '../../data-service.service';
 })
 export class ListComponent {
   userList : any = [];
-  constructor(private service : DataServiceService){}
+  constructor(private service : UserServiceService){}
 
   ngOnInit(): void {
     this.service.GetAllUsers().subscribe(data => {

@@ -1,32 +1,74 @@
-<div class="container vh-100">
-    <div class="d-flex w-100 h-100 justify-content-center align-items-center">
-<form  >
+<div class="container vh-90">
+    <div class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+        <div class="d-flex w-100 justify-content-between align-items-center">
+                <div *ngIf="type === 'Add'" class="text-black fs-1 ">Add user</div>
+                <div *ngIf="type === 'Update'" class="text-black fs-1 ">Update user</div>
+        <button [routerLink]="['/ums/users/list']" routerLinkActive="router-link-active"  class="btn btn-purple">Back to List</button>
+    </div>
+<form class="w-100"  [formGroup]="userForm" (ngSubmit) = "SubmitForm()">
     <div class="row mt-2 d-flex">
       <div class="mb-3 col-md-6">
         <label for="exampleInputEmail1" class="form-label">Name</label>
-        <input type="text" name="Name" formControlName="Name" class="form-control" id="name" aria-describedby="Enter Name" placeholder="Enter name">
+        <input type="text" name="Name" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Name'].errors }" id="name" aria-describedby="Enter Name" placeholder="Enter name">
+        @if (isSubmit && userForm.controls['Name'].errors) {
+            <div class="invalid-feedback">
+                @if (userForm.controls['Name'].errors['required']) {
+                <div>Name is required</div>
+                }
+            </div>
+            }
       </div>
       <div class="mb-3 col-md-6">
         <label for="exampleInputPassword1" class="form-label">Mobile No.</label>
-        <input type="number" name="Mobile" formControlName="Mobile" class="form-control" id="mobile" placeholder="Enter mobile">
+        <input type="number" name="Mobile" formControlName="Mobile" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Mobile'].errors }" class="form-control" id="mobile" placeholder="Enter mobile">
+        @if (isSubmit && userForm.controls['Mobile'].errors) {
+            <div class="invalid-feedback">
+                @if (userForm.controls['Mobile'].errors['required']) {
+                <div>Mobile no. is required</div>
+                }
+                @if (userForm.controls['Mobile'].errors['pattern']) {
+                    <div>Mobile no. is invalid</div>
+                    }
+            </div>
+            }
       </div>
     </div>
     <div class="row mt-2 d-flex">
       <div class="mb-3 col-md-6">
         <label for="email" class="form-label">Email</label>
-        <input type="email" name="Email" formControlName="Email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+        <input type="email" name="Email" formControlName="Email" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Email'].errors }" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+        @if (isSubmit && userForm.controls['Email'].errors) {
+            <div class="invalid-feedback">
+                @if (userForm.controls['Email'].errors['required']) {
+                <div>Email is required</div>
+                }
+                @if (userForm.controls['Email'].errors['pattern']) {
+                <div>Email is invalid</div>
+                }
+            </div>
+            }
       </div>
       <div class="mb-3 col-md-6">
         <label for="exampleInputPassword1" class="form-label">Age</label>
-        <input type="number" name="Age" formControlName="Age" class="form-control" id="age" placeholder="Enter age">
+        <input type="number" name="Age" formControlName="Age" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Age'].errors }" class="form-control" id="age" placeholder="Enter age">
+        @if (isSubmit && userForm.controls['Age'].errors) {
+            <div class="invalid-feedback">
+                @if (userForm.controls['Age'].errors['required']) {
+                <div>Age is required</div>
+                }
+                @if (userForm.controls['Age'].errors['ageRange']) {
+                    <div>Age is invalid</div>
+                    }
+            </div>
+            }
       </div>
     </div>
 
     <div class="mt-2 d-flex gap-2 justify-content-end">
 
-        <button type="submit" class="btn d-flex btn-success">Submit</button>
+        <button type="submit" class="btn d-flex btn-purple">Submit</button>
    
-        <button type="reset" class="btn d-flex btn-outline-success">Reset</button>
+        <button type="reset" class="btn d-flex btn-outline-purple">Reset</button>
       
     </div>
     </form>

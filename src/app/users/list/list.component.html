@@ -1,7 +1,10 @@
 <div class="container p-2">
     <div class="d-flex justify-content-between align-items-center">
         <div class="text-black fs-1 ">User list</div>
-        <button [routerLink]="['/add']" routerLinkActive="router-link-active"  class="btn btn-purple">Add user</button>
+        <div class="d-flex gap-2">
+        <button [routerLink]="['/ums/users/add']" class="btn btn-purple">Add using ReactiveForm</button>
+        <button [routerLink]="['/ums/users/template-directive']" class="btn btn-purple">Add using TemplateDirective</button>
+    </div>
     </div>
     <app-data-table [data]="userList"></app-data-table>
 </div>
