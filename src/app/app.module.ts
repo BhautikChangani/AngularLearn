@@ -9,22 +9,33 @@ import { UnauthorizedComponent } from './Layout/unauthorized/unauthorized.compon
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ListComponent } from './users/list/list.component';
 import { UsersModule } from './users/users.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AuthorizedComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterLink,
     RouterLinkActive,
-     UsersModule,
+    UsersModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

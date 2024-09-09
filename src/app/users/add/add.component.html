@@ -9,67 +9,44 @@
     <div class="row mt-2 d-flex">
       <div class="mb-3 col-md-6">
         <label for="exampleInputEmail1" class="form-label">Name</label>
-        <input type="text" name="Name" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Name'].errors }" id="name" aria-describedby="Enter Name" placeholder="Enter name">
-        @if (isSubmit && userForm.controls['Name'].errors) {
-            <div class="invalid-feedback">
-                @if (userForm.controls['Name'].errors['required']) {
-                <div>Name is required</div>
-                }
+        <input type="text" name="name" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['name'].errors }" id="name" aria-describedby="Enter Name" placeholder="Enter name">
+        <div *ngIf="isSubmit && userForm.controls['name'].errors" class="invalid-feedback">
+               <div *ngIf="userForm.controls['name'].errors['required']">Name is required</div>
             </div>
-            }
+            
       </div>
       <div class="mb-3 col-md-6">
         <label for="exampleInputPassword1" class="form-label">Mobile No.</label>
-        <input type="number" name="Mobile" formControlName="Mobile" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Mobile'].errors }" class="form-control" id="mobile" placeholder="Enter mobile">
-        @if (isSubmit && userForm.controls['Mobile'].errors) {
-            <div class="invalid-feedback">
-                @if (userForm.controls['Mobile'].errors['required']) {
-                <div>Mobile no. is required</div>
-                }
-                @if (userForm.controls['Mobile'].errors['pattern']) {
-                    <div>Mobile no. is invalid</div>
-                    }
-            </div>
-            }
+        <input type="number" name="mobile" formControlName="mobile" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['mobile'].errors }" class="form-control" id="mobile" placeholder="Enter mobile">
+        <div *ngIf="isSubmit && userForm.controls['mobile'].errors" class="invalid-feedback">
+                <div *ngIf="userForm.controls['mobile'].errors['required']">Mobile no. is required</div>
+                <div *ngIf="userForm.controls['mobile'].errors['pattern']">Mobile no. is invalid</div>                    
+        </div>
+            
       </div>
     </div>
     <div class="row mt-2 d-flex">
       <div class="mb-3 col-md-6">
         <label for="email" class="form-label">Email</label>
-        <input type="email" name="Email" formControlName="Email" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Email'].errors }" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
-        @if (isSubmit && userForm.controls['Email'].errors) {
-            <div class="invalid-feedback">
-                @if (userForm.controls['Email'].errors['required']) {
-                <div>Email is required</div>
-                }
-                @if (userForm.controls['Email'].errors['pattern']) {
-                <div>Email is invalid</div>
-                }
+        <input type="email" name="email" formControlName="email" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['email'].errors }" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+            <div *ngIf="isSubmit && userForm.controls['email'].errors" class="invalid-feedback">
+                <div *ngIf="userForm.controls['email'].errors['required']">Email is required</div>
+                <div *ngIf="userForm.controls['email'].errors['pattern']">Email is invalid</div>
             </div>
-            }
       </div>
       <div class="mb-3 col-md-6">
         <label for="exampleInputPassword1" class="form-label">Age</label>
-        <input type="number" name="Age" formControlName="Age" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['Age'].errors }" class="form-control" id="age" placeholder="Enter age">
-        @if (isSubmit && userForm.controls['Age'].errors) {
-            <div class="invalid-feedback">
-                @if (userForm.controls['Age'].errors['required']) {
-                <div>Age is required</div>
-                }
-                @if (userForm.controls['Age'].errors['ageRange']) {
-                    <div>Age is invalid</div>
-                    }
+        <input type="number" name="age" formControlName="age" [ngClass]="{ 'is-invalid': isSubmit && userForm.controls['age'].errors }" class="form-control" id="age" placeholder="Enter age">
+            <div *ngIf="isSubmit && userForm.controls['age'].errors" class="invalid-feedback">
+                <div *ngIf="userForm.controls['age'].errors['required']">Age is required</div>
+                    <div *ngIf="userForm.controls['age'].errors['ageRange']">Age is invalid</div>
             </div>
-            }
       </div>
     </div>
 
     <div class="mt-2 d-flex gap-2 justify-content-end">
-
         <button type="submit" class="btn d-flex btn-purple">Submit</button>
-   
         <button type="reset" class="btn d-flex btn-outline-purple">Reset</button>
-      
     </div>
     </form>
 </div>

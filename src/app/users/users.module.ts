@@ -7,7 +7,7 @@ import { DataTableComponent } from './list/data-table/data-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './add/add.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TemplateDirectiveComponent } from './template-directive/template-directive.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { TemplateDirectiveComponent } from './template-directive/template-direct
     ListComponent,
     DataTableComponent,
     AddComponent,
-    TemplateDirectiveComponent
+    TemplateDrivenComponent,
+    TemplateDrivenComponent
   ],
   imports: [
     CommonModule,

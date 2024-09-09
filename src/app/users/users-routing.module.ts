@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { AddComponent } from './add/add.component';
-import { TemplateDirectiveComponent } from './template-directive/template-directive.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'list', pathMatch:'full'},
   {path:'list', component: ListComponent},
-  {path:'add', component: AddComponent},
-  {path:'template-directive', component:TemplateDirectiveComponent}
+  {path:'reactive', component: AddComponent},
+  {path:'template-directive', component:TemplateDrivenComponent}
 ];
 
 @NgModule({

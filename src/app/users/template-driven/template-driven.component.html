@@ -1,0 +1,60 @@
+<div class="container vh-90">
+    <div class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+        <div class="d-flex w-100 justify-content-between align-items-center">
+            <div *ngIf="type === 'Add'" class="text-black fs-1">Add user</div>
+            <div *ngIf="type === 'Update'" class="text-black fs-1">Update user</div>
+            <button [routerLink]="['/ums/users/list']" routerLinkActive="router-link-active" class="btn btn-purple">Back
+                to List</button>
+        </div>
+        <form #userForm="ngForm" (ngSubmit)="SubmitForm(userForm)" novalidate class="w-100">
+            <div class="row mt-2 d-flex">
+                <div class="mb-3 col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" class="form-control"
+                        [ngClass]="{ 'is-invalid': isSubmit && name.invalid }" id="name" placeholder="Enter name"
+                        required>
+                    <div *ngIf="isSubmit && name.invalid" class="invalid-feedback">
+                        <div *ngIf="name.errors?.['required']">Name is required</div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="mobile" class="form-label">Mobile No.</label>
+                    <input type="text" name="mobile" [(ngModel)]="user.mobile" #mobile="ngModel" class="form-control"
+                        [ngClass]="{ 'is-invalid': isSubmit && mobile.invalid }" id="mobile" placeholder="Enter mobile"
+                        required pattern="^\d{10}$">
+                    <div *ngIf="isSubmit && mobile.invalid" class="invalid-feedback">
+                        <div *ngIf="mobile.errors?.['required']">Mobile no. is required</div>
+                        <div *ngIf="mobile.errors?.['pattern']">Mobile no. is invalid</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 d-flex">
+                <div class="mb-3 col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" [(ngModel)]="user.email" #email="ngModel" class="form-control"
+                        [ngClass]="{ 'is-invalid': isSubmit && email.invalid }" id="email" placeholder="Enter email"
+                        required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+                    <div *ngIf="isSubmit && email.invalid" class="invalid-feedback">
+                        <div *ngIf="email.errors?.['required']">Email is required</div>
+                        <div *ngIf="email.errors?.['pattern']">Email is invalid</div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" name="age" [(ngModel)]="user.age" #age="ngModel" min="18" max="100"
+                        class="form-control" [ngClass]="{ 'is-invalid': isSubmit && age.invalid }" id="age"
+                        placeholder="Enter age" required>
+                    <div *ngIf="isSubmit && age.invalid" class="invalid-feedback">
+                        <div *ngIf="age.errors?.['required']">Age is required</div>
+                        <div *ngIf="age.errors?.['min']">Age should be at least 18</div>
+                        <div *ngIf="age.errors?.['max']">Age should be less than 100</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 d-flex gap-2 justify-content-end">
+                <button type="submit" class="btn d-flex btn-purple">Submit</button>
+                <button type="reset" class="btn d-flex btn-outline-purple">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
