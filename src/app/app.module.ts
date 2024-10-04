@@ -7,7 +7,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthorizedComponent } from './Layout/authorized/authorized.component';
 import { UnauthorizedComponent } from './Layout/unauthorized/unauthorized.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ListComponent } from './users/list/list.component';
 import { UsersModule } from './users/users.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';

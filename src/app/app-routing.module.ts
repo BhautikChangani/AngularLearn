@@ -3,9 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthorizedComponent } from './Layout/authorized/authorized.component';
 import { UsersModule } from './users/users.module';
+import { UnauthorizedComponent } from './Layout/unauthorized/unauthorized.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'/ums', pathMatch: 'full'},
+  {path: '', component:UnauthorizedComponent, children: [
+    {}
+  ]},
   {path: 'ums', component:AuthorizedComponent,
 children: [
   {path:'', component: DashboardComponent},
